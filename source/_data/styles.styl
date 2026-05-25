@@ -1,0 +1,211 @@
+/* 自定义样式 - 基于 overreacted.io 视觉风格
+ * 文章标题渐变色系统 + 悬停动效
+ */
+
+// 颜色变量
+:root {
+  // 亮色主题
+  --light-bg-primary: #ffffff;
+  --light-bg-secondary: #f8f9fa;
+  --light-text-primary: #2c3e50;
+  --light-text-secondary: #6c757d;
+  --light-border: #e9ecef;
+  --light-link: #3eaf7c;
+  --light-link-hover: #2e8b57;
+  
+  // 深色主题
+  --dark-bg-primary: #18181a;
+  --dark-bg-secondary: #141416;
+  --dark-text-primary: #e4e6eb;
+  --dark-text-secondary: #b0b3b8;
+  --dark-border: #3e4042;
+  --dark-link: #4ecdc4;
+  --dark-link-hover: #26a69a;
+}
+
+// 文章标题渐变色系统
+.post-title {
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  // 7天内新文章 - 鲜艳渐变色
+  &.new-7d {
+    background: linear-gradient(135deg, #ffa7c4 0%, #ff8a65 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  // 30天内文章 - 柔和渐变色
+  &.new-30d {
+    background: linear-gradient(135deg, #d4a0ff 0%, #a0c4ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  // 30天以上文章 - 单色褪色
+  &.old-30d {
+    color: #888;
+    
+    .dark-mode & {
+      color: #666;
+    }
+  }
+}
+
+// 悬停放大效果
+.post-card, .article-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  &:hover {
+    transform: scale(1.005);
+    
+    .post-title {
+      transform: translateY(-1px);
+    }
+  }
+}
+
+// 链接动画
+a:not(.button) {
+  position: relative;
+  text-decoration: none;
+  color: var(--light-link);
+  transition: color 0.2s ease;
+  
+  .dark-mode & {
+    color: var(--dark-link);
+  }
+  
+  &:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: currentColor;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  &:hover {
+    color: var(--light-link-hover);
+    
+    .dark-mode & {
+      color: var(--dark-link-hover);
+    }
+    
+    &:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
+    }
+  }
+}
+
+// 按钮涟漪效果
+.button, .btn, button {
+  position: relative;
+  overflow: hidden;
+  
+  &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+  }
+  
+  &:focus:not(:active)::after {
+    animation: ripple 1s ease-out;
+  }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.5;
+  }
+  20% {
+    transform: scale(25, 25);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(40, 40);
+    opacity: 0;
+  }
+}
+
+// 主题切换过渡
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// 代码块增强
+.highlight, pre[class*="language-"] {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  
+  .dark-mode & {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  &:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    
+    .dark-mode & {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// 滚动条美化
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-bg-secondary);
+  
+  .dark-mode & {
+    background: var(--dark-bg-secondary);
+  }
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+  
+  .dark-mode & {
+    background: #4a4a4a;
+  }
+  
+  &:hover {
+    background: #a8a8a8;
+    
+    .dark-mode & {
+      background: #5a5a5a;
+    }
+  }
+}
+
+// 响应式调整
+@media (max-width: 768px) {
+  .post-title {
+    font-size: 1.8rem;
+  }
+  
+  .post-card:hover {
+    transform: none;
+  }
+}
