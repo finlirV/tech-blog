@@ -146,8 +146,8 @@ motion:
   sidebar: true
 
 # 自定义样式注入
-inject:
-  head:
-    - <link rel="stylesheet" href="/css/custom.css">
-  bottom:
-    - <script src="/js/custom.js"></script>
+# inject:
+#   head:
+#     - <link rel="stylesheet" href="/css/custom.css">
+#   bottom:
+#     - <script src="/js/custom.js"></script>
