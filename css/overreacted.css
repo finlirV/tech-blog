@@ -1,5 +1,46 @@
 /* Overreacted.io inspired styles for Butterfly theme */
 
+/* CSS Variables - define here instead of external YAML */
+:root {
+  --overreacted-max-width: 672px;
+  --overreacted-side-margin: auto;
+  --overreacted-font-size: 1.125rem;
+  --overreacted-line-height: 1.8;
+  --overreacted-spacing: 60px;
+  --overreacted-meta-size: 0.875rem;
+  --overreacted-h1-size: 2.4rem;
+  --overreacted-h1-size-mobile: 1.75rem;
+  --overreacted-text: #1a1a1a;
+  --overreacted-text-secondary: #006d5b;
+  --overreacted-text-muted: #808080;
+  --overreacted-bg: #ffffff;
+  --overreacted-link: #006d5b;
+  --overreacted-link-hover: #004d40;
+  --overreacted-border: #e1e4e8;
+  --overreacted-code-bg: #f6f8fa;
+  --overreacted-blockquote-border: #006d5b;
+  --overreacted-card-bg: #fafafa;
+  --overreacted-card-hover: #f5f5f5;
+  --overreacted-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --overreacted-text: #e1e4e8;
+    --overreacted-text-secondary: #7ee787;
+    --overreacted-text-muted: #8b949e;
+    --overreacted-bg: #0d1117;
+    --overreacted-link: #7ee787;
+    --overreacted-link-hover: #56d364;
+    --overreacted-border: #30363d;
+    --overreacted-code-bg: #161b22;
+    --overreacted-blockquote-border: #7ee787;
+    --overreacted-card-bg: #161b22;
+    --overreacted-card-hover: #1c2129;
+    --overreacted-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+}
+
 /* Base layout - override Butterfly theme */
 body {
   font-family: 'Merriweather', 'Merriweather Fallback', Georgia, serif !important;
