@@ -1,0 +1,39 @@
+# Overreacted.io inspired styles for Butterfly theme
+# This file will be injected into the theme
+
+inject:
+  head:
+    - <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    - <style>
+        :root {
+          --overreacted-max-width: 672px;
+          --overreacted-side-margin: 304px;
+          --overreacted-bg: #ffffff;
+          --overreacted-text: #222222;
+          --overreacted-text-secondary: #374151;
+          --overreacted-line-height: 1.5;
+          --overreacted-font-size: 16px;
+          --overreacted-h2-size: 28px;
+          --overreacted-meta-size: 13px;
+          --overreacted-spacing: 48px;
+        }
+        
+        @media (max-width: 1200px) {
+          :root {
+            --overreacted-side-margin: 200px;
+          }
+        }
+        
+        @media (max-width: 900px) {
+          :root {
+            --overreacted-side-margin: 100px;
+          }
+        }
+        
+        @media (max-width: 768px) {
+          :root {
+            --overreacted-side-margin: 20px;
+            --overreacted-spacing: 32px;
+          }
+        }
+      </style>

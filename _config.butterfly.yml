@@ -42,48 +42,48 @@ menu:
   标签: /tags/ || fas fa-tags
   关于: /about/ || fas fa-user
 
-# 侧边栏
+# 侧边栏 - 隐藏以匹配 overreacted.io 极简风格
 aside:
   # 侧边栏位置：left | right
   position: right
   # 侧边栏显示条件：always | hide | remove
-  display: post
+  display: remove
   # 侧边栏宽度
   width: 300px
   # 侧边栏卡片间距
   card_style: 1
 
-# 页面布局
+# 页面布局 - overreacted.io 极简风格
 page:
   # 文章列表布局
   default_post_layout: 1
   # 文章间距
-  post_spacing: 20px
-  # 文章阴影
-  post_shadow: true
+  post_spacing: 0px
+  # 文章阴影 - 关闭
+  post_shadow: false
 
-# 文章配置
+# 文章配置 - overreacted.io 极简风格
 post:
   # 文章标题
   title:
     # 标题大小
-    size: 2.2rem
+    size: 1.75rem
     # 标题颜色
-    color: '#2c3e50'
-  # 文章元信息
+    color: '#222222'
+  # 文章元信息 - 极简化
   meta:
     # 发布日期
     date: true
     # 更新日期
-    updated: true
+    updated: false
     # 字数统计
-    wordcount: true
+    wordcount: false
     # 阅读时长
-    min2read: true
+    min2read: false
     # 分类
-    categories: true
+    categories: false
     # 标签
-    tags: true
+    tags: false
   # 代码高亮
   code:
     # 代码块主题
@@ -94,38 +94,21 @@ post:
     line_number: true
     # 代码块高度限制
     max_height: 400px
+  # 隐藏版权和打赏
+  copyright: false
+  reward: false
 
-# 评论系统 (Giscus)
+# 评论系统 - 隐藏以匹配 overreacted.io 极简风格
 comment:
-  type: giscus
-  giscus:
-    # Giscus 配置
-    repo: your-username/your-repo
-    repo_id: your-repo-id
-    category: Announcements
-    category_id: your-category-id
-    mapping: pathname
-    strict: 0
-    reactions_enabled: 1
-    emit_metadata: 0
-    input_position: bottom
-    theme: preferred_color_scheme
-    lang: zh-CN
+  type: false
 
-# 搜索系统 (Algolia)
+# 搜索系统 - 隐藏以匹配 overreacted.io 极简风格
 search:
-  type: algolia
-  algolia:
-    appId: your-app-id
-    apiKey: your-api-key
-    indexName: your-index-name
-    hits:
-      per_page: 10
+  type: false
 
-# 统计系统 (Google Analytics)
+# 统计系统 - 隐藏以匹配 overreacted.io 极简风格
 analytics:
-  google:
-    tracking_id: your-tracking-id
+  google: false
 
 # 暗色模式配置
 darkmode:
@@ -136,18 +119,19 @@ darkmode:
   # 自动切换
   autoChangeMode: 1
 
-# 动画效果
+# 动画效果 - overreacted.io 极简风格
 motion:
   # 页面切换动画
-  transition: true
+  transition: false
   # 文章列表动画
-  post_list: true
+  post_list: false
   # 侧边栏动画
-  sidebar: true
+  sidebar: false
 
-# 自定义样式注入
-# inject:
-#   head:
-#     - <link rel="stylesheet" href="/css/custom.css">
-#   bottom:
-#     - <script src="/js/custom.js"></script>
+# 自定义样式注入 - overreacted.io 样式
+inject:
+  head:
+    - <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    - <link rel="stylesheet" href="/tech-blog/css/overreacted.css">
+  bottom:
+    - <script src="/tech-blog/js/overreacted.js"></script>
