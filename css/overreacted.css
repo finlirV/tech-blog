@@ -1,0 +1,302 @@
+/* Overreacted.io inspired styles for Butterfly theme */
+
+/* Base layout */
+body {
+  font-family: 'Merriweather', 'Merriweather Fallback', Georgia, serif;
+  font-size: var(--overreacted-font-size);
+  line-height: var(--overreacted-line-height);
+  color: var(--overreacted-text);
+  background-color: var(--overreacted-bg);
+  margin: 0;
+  padding: var(--overreacted-spacing) 20px;
+  max-width: var(--overreacted-max-width);
+  margin-left: var(--overreacted-side-margin);
+  margin-right: var(--overreacted-side-margin);
+}
+
+/* Header - overreacted style */
+#page-header {
+  margin-bottom: 56px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#site-title {
+  font-size: 24px;
+  font-weight: 900;
+  display: inline-block;
+  transition: transform 0.2s ease-in-out, opacity 0.2s 0.4s linear;
+}
+
+#site-title a {
+  color: transparent;
+  background-image: linear-gradient(45deg, var(--overreacted-text), var(--overreacted-text));
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-decoration: none;
+  transition: --myColor1 0.2s ease-out, --myColor2 0.2s ease-in-out;
+}
+
+#site-title a:hover {
+  transform: scale(1.02);
+}
+
+#site-subtitle {
+  font-size: 13px;
+  color: var(--overreacted-text-secondary);
+  font-style: italic;
+  position: relative;
+  top: 2px;
+}
+
+/* Main content */
+#content-inner {
+  margin-top: -10px;
+}
+
+/* Article list - overreacted style */
+.recent-post-item {
+  padding: 16px 0;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  transition: transform 0.2s ease-in-out;
+  will-change: transform;
+}
+
+.recent-post-item:hover {
+  transform: scale(1.005);
+}
+
+.recent-post-item .post-title {
+  font-size: var(--overreacted-h2-size);
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 8px;
+  color: var(--overreacted-text);
+  text-decoration: none;
+}
+
+/* LAB color gradients for article titles */
+.recent-post-item:nth-child(1) .post-title {
+  color: lab(62.022 58.758 -2.83);
+}
+
+.recent-post-item:nth-child(2) .post-title {
+  color: lab(61.688 58.566 -3.295);
+}
+
+.recent-post-item:nth-child(3) .post-title {
+  color: lab(61.265 58.323 -3.883);
+}
+
+.recent-post-item:nth-child(4) .post-title {
+  color: lab(61.031 58.189 -4.208);
+}
+
+.recent-post-item:nth-child(5) .post-title {
+  color: lab(60.819 58.068 -4.503);
+}
+
+.recent-post-item:nth-child(6) .post-title {
+  color: lab(60.753 58.029 -4.595);
+}
+
+.recent-post-item:nth-child(7) .post-title {
+  color: lab(60.485 57.876 -4.967);
+}
+
+.recent-post-item:nth-child(8) .post-title {
+  color: lab(60.296 57.767 -5.23);
+}
+
+.recent-post-item:nth-child(9) .post-title {
+  color: lab(60.107 57.658 -5.494);
+}
+
+.recent-post-item:nth-child(10) .post-title {
+  color: lab(59.561 57.345 -6.253);
+}
+
+.recent-post-item .post-meta {
+  font-size: var(--overreacted-meta-size);
+  color: var(--overreacted-text-secondary);
+  margin: 0;
+  padding: 0;
+}
+
+.recent-post-item .post-meta .post-meta-date {
+  color: var(--overreacted-text-secondary);
+}
+
+.recent-post-item .post-content {
+  margin-top: 4px;
+  font-size: var(--overreacted-font-size);
+  line-height: var(--overreacted-line-height);
+  color: var(--overreacted-text);
+}
+
+/* Remove default Butterfly decorations */
+.recent-post-item:before,
+.recent-post-item:after {
+  display: none;
+}
+
+/* Hide sidebar and other Butterfly elements */
+#aside-content,
+#sidebar,
+#rightside,
+#footer,
+#nav,
+#nav-below,
+#post-info,
+#post-meta,
+.post-copyright,
+.post-reward,
+#comments,
+#pagination {
+  display: none;
+}
+
+/* Single article page */
+#post {
+  max-width: var(--overreacted-max-width);
+  margin: 0 auto;
+  padding: 0;
+}
+
+#post .post-title {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 44px;
+  margin-bottom: 24px;
+  color: var(--overreacted-text);
+}
+
+#post .post-meta {
+  font-size: var(--overreacted-meta-size);
+  color: var(--overreacted-text-secondary);
+  margin-bottom: 32px;
+}
+
+#post .post-content {
+  font-size: var(--overreacted-font-size);
+  line-height: var(--overreacted-line-height);
+  color: var(--overreacted-text);
+}
+
+#post .post-content h1,
+#post .post-content h2,
+#post .post-content h3,
+#post .post-content h4,
+#post .post-content h5,
+#post .post-content h6 {
+  font-weight: 900;
+  margin-top: 32px;
+  margin-bottom: 16px;
+  color: var(--overreacted-text);
+}
+
+#post .post-content h2 {
+  font-size: 28px;
+}
+
+#post .post-content h3 {
+  font-size: 24px;
+}
+
+#post .post-content p {
+  margin-bottom: 24px;
+}
+
+#post .post-content code {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 14px;
+}
+
+#post .post-content pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+#post .post-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+#post .post-content blockquote {
+  border-left: 4px solid rgba(0, 0, 0, 0.1);
+  padding-left: 16px;
+  margin-left: 0;
+  color: var(--overreacted-text-secondary);
+  font-style: italic;
+}
+
+#post .post-content a {
+  color: var(--overreacted-text);
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 0, 0, 0.2);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  transition: text-decoration-color 0.2s ease-in-out;
+}
+
+#post .post-content a:hover {
+  text-decoration-color: var(--overreacted-text);
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --overreacted-bg: #0a0a0a;
+    --overreacted-text: #f0f0f0;
+    --overreacted-text-secondary: #a0a0a0;
+  }
+  
+  #post .post-content code {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  #post .post-content pre {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  #post .post-content blockquote {
+    border-left-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  #post .post-content a {
+    text-decoration-color: rgba(255, 255, 255, 0.3);
+  }
+  
+  #post .post-content a:hover {
+    text-decoration-color: var(--overreacted-text);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    padding: 32px 20px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  
+  #post .post-title {
+    font-size: 32px;
+    line-height: 36px;
+  }
+  
+  .recent-post-item .post-title {
+    font-size: 24px;
+  }
+}
