@@ -12,7 +12,8 @@ language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
-url: https://tech-insights.netlify.app
+url: https://finlirv.github.io/tech-blog
+root: /tech-blog/
 permalink: :year/:month/:title/
 permalink_defaults:
 pretty_urls:
