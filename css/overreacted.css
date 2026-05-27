@@ -1,17 +1,17 @@
 /* Overreacted.io inspired styles for Butterfly theme */
 
-/* Base layout */
+/* Base layout - override Butterfly theme */
 body {
-  font-family: 'Merriweather', 'Merriweather Fallback', Georgia, serif;
-  font-size: var(--overreacted-font-size);
-  line-height: var(--overreacted-line-height);
-  color: var(--overreacted-text);
-  background-color: var(--overreacted-bg);
-  margin: 0;
-  padding: var(--overreacted-spacing) 20px;
-  max-width: var(--overreacted-max-width);
-  margin-left: var(--overreacted-side-margin);
-  margin-right: var(--overreacted-side-margin);
+  font-family: 'Merriweather', 'Merriweather Fallback', Georgia, serif !important;
+  font-size: var(--overreacted-font-size) !important;
+  line-height: var(--overreacted-line-height) !important;
+  color: var(--overreacted-text) !important;
+  background-color: var(--overreacted-bg) !important;
+  margin: 0 !important;
+  padding: var(--overreacted-spacing) 20px !important;
+  max-width: var(--overreacted-max-width) !important;
+  margin-left: var(--overreacted-side-margin) !important;
+  margin-right: var(--overreacted-side-margin) !important;
 }
 
 /* Header - overreacted style */
@@ -144,20 +144,21 @@ body {
   display: none;
 }
 
-/* Hide sidebar and other Butterfly elements */
-#aside-content,
-#sidebar,
-#rightside,
-#footer,
-#nav,
-#nav-below,
-#post-info,
-#post-meta,
-.post-copyright,
-.post-reward,
-#comments,
-#pagination {
-  display: none;
+/* Hide sidebar and other Butterfly elements - with !important to override theme */
+body #aside-content,
+body #sidebar,
+body #rightside,
+body #footer,
+body #nav,
+body #nav-below,
+body #post-info,
+body #post-meta,
+body .post-copyright,
+body .post-reward,
+body #comments,
+body #pagination {
+  display: none !important;
+}
 }
 
 /* Single article page */
