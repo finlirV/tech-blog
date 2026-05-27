@@ -29,6 +29,8 @@ jobs:
         run: |
           npx hexo clean
           npx hexo generate
+          # Ensure .nojekyll exists to disable Jekyll processing
+          touch public/.nojekyll
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
